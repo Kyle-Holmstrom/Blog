@@ -1,7 +1,18 @@
 const express = require('express');
-const app = express();
+const userRouter = express.Router();
 
-const userRoute = express.Router();
-let User = require('../models/user');
+// Load User model
+const User = require('../models/User');
 
-// Get all Users
+// test routing for users.
+userRouter.get('/test', (req, res) => {
+    res.send('user route testing!.');
+});
+
+userRouter.get('/', (req, res) => {
+    User.find()
+        .then(users => res.json(users))
+        .catch(err => res.status(404).json({ nousersfound: 'No users found' }));
+});
+
+module.exports = userRouter;
