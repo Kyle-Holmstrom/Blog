@@ -1,0 +1,6 @@
+.blog-container {
+    display: grid;
+    text-align: center;
+    grid-template-cols: 3;
+    grid-template-rows: 5;
+}
