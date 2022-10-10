@@ -5,14 +5,14 @@ const userRouter = express.Router();
 const User = require('../models/User');
 
 // Get all users
-userRouter.get('/user', (req, res) => {
+userRouter.get('/', (req, res) => {
     User.find()
         .then(users => res.json(users))
         .catch(err => res.status(404).json({ nousersfound: 'No users found' }));
 });
 
 // Get single user by id
-userRouter.get('/user/:id', (req, res) => {
+userRouter.get('/:id', (req, res) => {
     User.findById(req.params.id)
         .then(user => res.json(user))
         .catch(err => res.status(404).json({ nouserfound: 'No user found.' }));
@@ -26,14 +26,14 @@ userRouter.post('/user', (req, res) => {
 });
 
 // Update a user
-userRouter.put('/user/:id', (req, res) => {
+userRouter.put('/:id', (req, res) => {
     User.findByIdAndUpdate(req.params.id, req.body)
         .then(user => res.json({ msg: 'Successfully updated!.'}))
-        .catch(err => res.status(404).json({ error: 'Unable to update the Database.'}));
+        .catch(err => res.status(404).json({ error: 'Unable to update the Database for users.'}));
 });
 
 // Delete a user
-userRouter.delete('/user/:id', (req, res) => {
+userRouter.delete('/:id', (req, res) => {
     User.findByIdAndRemove(req.params.id)
         .then(user => res.json({ msg: 'Successfully deleted user.'}))
         .catch(err => res.status(404).json({ error: 'Unable to delete user from database.'}));
