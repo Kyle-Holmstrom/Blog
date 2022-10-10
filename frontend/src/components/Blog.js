@@ -14,7 +14,7 @@ const Blog = () => {
     
     return(
         <div className="blog-container">
-            <h1>Welcome to my Blog where I talk about anything and everything!</h1>
+            <h1>Welcome to my Blog where I talk <br/> about anything and everything!</h1>
             {
                 blogPost.map((key, val) => {
                     return <div key={key} className="blog-post">
