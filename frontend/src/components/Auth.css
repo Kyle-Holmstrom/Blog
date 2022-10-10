@@ -12,7 +12,7 @@
     padding-top: 30px;
     padding-bottom: 20px;
     border-radius: 8px;
-    background-color: white;
+    background: linear-gradient(36deg, transparent, skyblue, blue);
 }
 
 .Auth-form-content {
@@ -52,12 +52,18 @@ label {
 }
 
 .btn {
-    background: darkblue;
     border-radius: 8px;
-    color: white;
+    border: solid 1px skyblue;
+    background-color: inset white;
+    color: black;
+    font-weight: bold;
     cursor: pointer;
     margin-top: 0.75rem;
     padding: 3px;
+}
+
+.btn:hover {
+    background: linear-gradient(36deg, transparent, skyblue, skyblue, blue);
 }
 
 .already-registered {

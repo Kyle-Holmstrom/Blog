@@ -21,7 +21,8 @@ export default function (props) {
               </span>
             </div>
             <div className="form-group">
-              <label>Email address</label>
+              <label>Email</label>
+              <br/>
               <input
                 type="email"
                 className="form-control"
@@ -30,6 +31,7 @@ export default function (props) {
             </div>
             <div className="form-group">
               <label>Password</label>
+              <br/>
               <input
                 type="password"
                 className="form-control"
@@ -54,20 +56,39 @@ export default function (props) {
           <h3 className="Auth-form-title">Sign In</h3>
           <div className="already-registered">
             Already registered?{" "}
-            <span className="link-primary" onClick={changeAuthMode}>
+            <span className="sign-up" onClick={changeAuthMode}>
               Sign In
             </span>
           </div>
           <div className="form-group">
-            <label>Full Name</label>
+            <label>Upload Avatar</label>
+            <br/>
             <input
-              type="email"
+              type="file"
               className="form-control"
-              placeholder="e.g Jane Doe"
             />
           </div>
           <div className="form-group">
-            <label>Email address</label>
+            <label>First Name</label>
+            <br/>
+            <input
+              type="name"
+              className="form-control"
+              placeholder="e.g Jane"
+            />
+          </div>
+          <div className="form-group">
+            <label>Last Name</label>
+            <br/>
+            <input
+              type="name"
+              className="form-control"
+              placeholder="e.g Doe"
+            />
+          </div>
+          <div className="form-group">
+            <label>Email</label>
+            <br/>
             <input
               type="email"
               className="form-control"
@@ -76,6 +97,7 @@ export default function (props) {
           </div>
           <div className="form-group">
             <label>Password</label>
+            <br/>
             <input
               type="password"
               className="form-control"
