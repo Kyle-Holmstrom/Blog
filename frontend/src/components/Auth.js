@@ -72,7 +72,7 @@ export default function (props) {
             <label>First Name</label>
             <br/>
             <input
-              type="name"
+              type="text"
               className="form-control"
               placeholder="e.g Jane"
             />
@@ -81,7 +81,7 @@ export default function (props) {
             <label>Last Name</label>
             <br/>
             <input
-              type="name"
+              type="text"
               className="form-control"
               placeholder="e.g Doe"
             />
