@@ -12,7 +12,7 @@ app.get('/blog', (req, res) => {
 
 // User routing
 
-app.get('/blog/user', userRouter, (req, res) => {});
+app.get('/user', userRouter, (req, res) => {});
 
 app.get('/user/:id', userRouter, (req, res) => {});
 
