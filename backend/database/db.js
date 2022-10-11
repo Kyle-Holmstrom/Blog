@@ -16,6 +16,7 @@ async function db() {
         //await getAllUsers(client);
         //await updateUser(client, "Holmstrom", { password: "Admin321" });
         //await upsertUser(client, "Holmstrom", { password: "Admin123" });
+        //await deleteUser(client, "Superman");
 
     } catch (e) {
         console.log(e);
@@ -48,7 +49,7 @@ async function getAllUsers(client) {
 
 // Get user by name
 async function findOneUserByName(client, nameOfUser) {
-    const result = await client.db("Blog").collection("users").findOne({ firstName: nameOfUser });
+    const result = await client.db("Blog").collection("users").findOne({ lastName: nameOfUser });
     
     if (result) {
         console.log(`Found users: ${nameOfUser}.`);
@@ -86,6 +87,14 @@ async function upsertUser(client, nameOfUser, updatedUser) {
     } else {
         console.log(`${result.modifiedCount} document(s) was/wer updated`);
     }
+}
+
+// Delete a user by last name
+async function deleteUser(client, selectedUser) {
+    const result = await client.db("Blog").collection("users").deleteOne(
+        { lastName: selectedUser }
+    );
+    console.log(`${result.deletedCount} was/were deleted.`);
 }
 
 
