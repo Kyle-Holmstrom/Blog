@@ -10,4 +10,4 @@ const BlogSchema = new mongoose.Schema({
     createdAt: { type: Date, default: new Date(), required: true }
 });
 
-module.exports = BlogPost = mongoose.model('blog', BlogSchema);
+module.exports = mongoose.model('post', BlogSchema);

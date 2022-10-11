@@ -10,4 +10,4 @@ const UserSchema = new mongoose.Schema({
     isAdmin: { type: Number, required: true }
 });
 
-module.exports = User = mongoose.model('user', UserSchema);
+module.exports = mongoose.model('users', UserSchema);
