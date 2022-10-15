@@ -1,7 +1,6 @@
 const express = require('express');
 const db = require('./database/db');
 const router = require('./routes/user.routes');
-
 const app = express();
 
 app.use(express.json());
@@ -12,7 +11,7 @@ app.get('/blog', (req, res) => {
 });
 
 // User routing
-app.use('/api/user', router);
+app.use('/api/all-user', router);
 app.use('/api/user/:id', router)
 
 
