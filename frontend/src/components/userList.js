@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Button from '@mui/material/Button';
 import PortraitSharpIcon from '@mui/icons-material/PortraitSharp';
+import './UserList.css';
 
 const User = (props) => (
     <tr>
@@ -14,7 +15,7 @@ const User = (props) => (
         <td>{props.user.isAdmin}</td>
         <td>
             <Button variant="contained" >
-                <Link to={`/update/${props.user._id}`}
+                <Link to={`/edit/${props.user._id}`}
                     style={{color: 'white', textDecoration: 'none'}}
                     >Edit</Link>
                 </Button> 
@@ -76,7 +77,7 @@ export default function RecordList() {
     }
 
     return (
-        <div>
+        <div className="user-list-container">
             <h3>User List</h3>
             <table>
                 <thead>
@@ -86,7 +87,7 @@ export default function RecordList() {
                         <th>E-Mail</th>
                         <th>User Name</th>
                         <th>Password</th>
-                        <th>avatar</th>
+                        <th>Avatar</th>
                         <th>Is an Admin</th>
                     </tr>
                 </thead>
@@ -94,8 +95,8 @@ export default function RecordList() {
                     {userList()}
                 </tbody>
             </table>
-            <Button variant="contained">
-                <Link to="/add-user" style={{textDecoration: 'none', color: 'white'}}>Create User</Link>
+            <Button variant="contained" className="add-user-btn">
+                <Link to="/add-user" className="add-user-link">Create User</Link>
             </Button>
         </div>
     );
