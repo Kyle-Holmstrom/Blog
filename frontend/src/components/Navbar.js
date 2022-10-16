@@ -14,6 +14,9 @@ const Navbar = () => {
             <NavLink to="auth" className="nav-link">
                 Login/Sign Up
             </NavLink>
+            <NavLink to="show-users" className="nav-link">
+                View Registered Users
+            </NavLink>
         </nav>
     );
 }

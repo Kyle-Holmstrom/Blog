@@ -6,6 +6,7 @@ import NoMatch from './components/NoMatch';
 import Navbar from './components/Navbar';
 import Blog from './components/Blog';
 import Auth from './components/Auth';
+import RecordList from './components/userList';
 
 class App extends Component {
   render() {
@@ -19,6 +20,7 @@ class App extends Component {
           <Route exact path="/" element={<Blog />} />
           <Route path="/shop" element={<Shop />} />
           <Route path="auth" element={<Auth />} />
+          <Route path="show-users" element={<RecordList />} />
           <Route path="*" element={<NoMatch />} />
         </Routes>
       </div>
