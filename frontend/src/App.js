@@ -7,6 +7,7 @@ import Navbar from './components/Navbar';
 import Blog from './components/Blog';
 import Auth from './components/Auth';
 import RecordList from './components/userList';
+import Create from './components/AddUser';
 
 class App extends Component {
   render() {
@@ -21,6 +22,7 @@ class App extends Component {
           <Route path="/shop" element={<Shop />} />
           <Route path="auth" element={<Auth />} />
           <Route path="show-users" element={<RecordList />} />
+          <Route path="add-user" element={<Create /> } />
           <Route path="*" element={<NoMatch />} />
         </Routes>
       </div>

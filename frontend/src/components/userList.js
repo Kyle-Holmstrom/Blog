@@ -20,7 +20,7 @@ const User = (props) => (
                 </Button> 
             <Button variant="contained" style={{marginLeft: '5px'}}
                 onClick={() => {
-                    props.deleteRecord(props.user._id);
+                    props.deleteUser(props.user._id);
                 }}
             >
                 Delete
@@ -94,6 +94,9 @@ export default function RecordList() {
                     {userList()}
                 </tbody>
             </table>
+            <Button variant="contained">
+                <Link to="/add-user" style={{textDecoration: 'none', color: 'white'}}>Create User</Link>
+            </Button>
         </div>
     );
 }
