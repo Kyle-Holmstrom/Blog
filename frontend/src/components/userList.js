@@ -11,6 +11,7 @@ const User = (props) => (
         <td>{props.user.email}</td>
         <td>{props.user.userName}</td>
         <td>{props.user.password}</td>
+        {/* Figure out why the avatar image isn't displaying/uploading to mongodb correctly.. */}
         <td><img src={props.user.avatar} alt='Profile Picture' /></td>
         <td>{props.user.isAdmin}</td>
         <td>

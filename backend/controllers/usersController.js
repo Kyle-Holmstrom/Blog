@@ -35,16 +35,7 @@ async function addUser(req, response) {
      * this is the schema and will reinforce properties...
      */
     
-    // let newUser = new User({
-    //     firstName: req.body.firstName,
-    //     lastName: req.body.lastName,
-    //     email: req.body.email,
-    //     password: req.body.password,
-    //     avatar: req.body.avatar,
-    //     isAdmin: req.body.isAdmin,
-    // });
-
-    let newUser = {
+    let newUser = new User({
         firstName: req.body.firstName,
         lastName: req.body.lastName,
         email: req.body.email,
@@ -52,7 +43,17 @@ async function addUser(req, response) {
         password: req.body.password,
         avatar: req.body.avatar,
         isAdmin: req.body.isAdmin,
-    };
+    });
+
+    // let newUser = {
+    //     firstName: req.body.firstName,
+    //     lastName: req.body.lastName,
+    //     email: req.body.email,
+    //     userName: req.body.userName,
+    //     password: req.body.password,
+    //     avatar: req.body.avatar,
+    //     isAdmin: req.body.isAdmin,
+    // };
     db_connect.collection('users').insertOne(newUser, function (err, res) {
         if (err) throw err;
         response.json(res);
