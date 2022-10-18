@@ -48,6 +48,7 @@ async function addUser(req, response) {
         firstName: req.body.firstName,
         lastName: req.body.lastName,
         email: req.body.email,
+        userName: req.body.userName,
         password: req.body.password,
         avatar: req.body.avatar,
         isAdmin: req.body.isAdmin,
@@ -85,7 +86,7 @@ async function updateUser(req, response) {
 async function deleteUser(req, response) {
     let db_connect = dbo.getDb();
     let myquery = { _id: ObjectId(req.params.id) };
-    db_connect.collection('user')
+    db_connect.collection('users')
         .deleteOne(myquery, function (err, obj) {
             if (err) throw err;
             console.log('1 document deleted');

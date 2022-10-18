@@ -49,7 +49,7 @@ export default function Create() {
     avatar: "",
     isAdmin: "",
    });
-   navigate("/");
+   navigate("/show-users");
  }
  
  // This following section will display the form that takes the input from the user.

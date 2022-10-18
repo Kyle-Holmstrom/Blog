@@ -11,7 +11,7 @@ const User = (props) => (
         <td>{props.user.email}</td>
         <td>{props.user.userName}</td>
         <td>{props.user.password}</td>
-        <td>{props.user.avatar || <PortraitSharpIcon />}</td>
+        <td><img src={props.user.avatar} alt='Profile Picture' /></td>
         <td>{props.user.isAdmin}</td>
         <td>
             <Button variant="contained" >
@@ -69,7 +69,7 @@ export default function RecordList() {
             return (
                 <User
                     user={user}
-                    deleteRecord={() => deleteUser(user._id)}
+                    deleteUser={() => deleteUser(user._id)}
                     key={user._id}
                     />
             );
