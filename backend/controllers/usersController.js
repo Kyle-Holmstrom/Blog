@@ -17,7 +17,7 @@ async function getAllUsers(req, res) {
 
 // Get user by id
 async function findOneUserById(req, res) {
-    let db_connect = dbo.getDb();
+    let db_connect = dbo.getDb("Blog");
     let myquery = { _id: ObjectId(req.params.id) };
     db_connect
         .collection('users')
@@ -29,7 +29,7 @@ async function findOneUserById(req, res) {
 
 // Create a new user
 async function addUser(req, response) {
-    let db_connect = dbo.getDb();
+    let db_connect = dbo.getDb("Blog");
     /**
      * Try to get the new User() to work when coding the frontend
      * this is the schema and will reinforce properties...
@@ -62,7 +62,7 @@ async function addUser(req, response) {
 
 // Update a user by id
 async function updateUser(req, response) {
-    let db_connect = dbo.getDb();
+    let db_connect = dbo.getDb("Blog");
     let myquery = { _id: ObjectId(req.params.id) };
     let newvalues = {
         $set: {
@@ -85,7 +85,7 @@ async function updateUser(req, response) {
 
 // Delete a user by id
 async function deleteUser(req, response) {
-    let db_connect = dbo.getDb();
+    let db_connect = dbo.getDb("Blog");
     let myquery = { _id: ObjectId(req.params.id) };
     db_connect.collection('users')
         .deleteOne(myquery, function (err, obj) {
