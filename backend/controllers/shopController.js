@@ -1,13 +1,13 @@
 const dbo = require('../database/db');
-const User = require('../models/User');
+const Shop = require('../models/Shop');
 // This will help convert the id from string to ObjectId for the _id
 const ObjectId = require('mongodb').ObjectId;
 
-// Get all users
-async function getAllUsers(req, res) {
+// Get all products
+async function getAllProducts(req, res) {
     let db_connect = dbo.getDb('Blog');
     db_connect
-        .collection("users")
+        .collection('shop')
         .find({})
         .toArray(function (err, result) {
             if (err) throw err;
@@ -15,54 +15,55 @@ async function getAllUsers(req, res) {
         });
 };
 
-// Get user by id
-async function findOneUserById(req, res) {
+// Get a single product by id
+async function findOneProductById(req, res) {
     let db_connect = dbo.getDb('Blog');
     let myquery = { _id: ObjectId(req.params.id) };
     db_connect
-        .collection('users')
+        .collection('shop')
         .findOne(myquery, function (err, result) {
             if (err) throw err;
             res.json(result);
         });
 };
 
-// Create a new user
-async function addUser(req, response) {
+// Add a product to the shop
+async function addProduct(req, response) {
     let db_connect = dbo.getDb('Blog');
     
-    let newUser = new User({
-        firstName: req.body.firstName,
-        lastName: req.body.lastName,
-        email: req.body.email,
-        userName: req.body.userName,
-        password: req.body.password,
-        avatar: req.body.avatar,
-        isAdmin: req.body.isAdmin,
+    let newShopItem = new Shop({
+        fileUpload: req.body.fileUpload,
+        productName: req.body.productName,
+        description: req.body.description,
+        price: req.body.price,
+        inStock: req.body.inStock,
+        mensProduct: req.body.mensProduct,
+        womensProduct: req.body.womensProduct,
     });
 
-    db_connect.collection('users').insertOne(newUser, function (err, res) {
+    db_connect.collection('shop').insertOne(newShopItem, function (err, res) {
         if (err) throw err;
         response.json(res);
     });
 };
 
-// Update a user by id
-async function updateUser(req, response) {
+// Update a product by id
+async function updateProduct(req, response) {
     let db_connect = dbo.getDb('Blog');
     let myquery = { _id: ObjectId(req.params.id) };
     let newvalues = {
         $set: {
-            firstName: req.body.firstName,
-            lastName: req.body.lastName,
-            email: req.body.email,
-            password: req.body.password,
-            avatar: req.body.avatar,
-            isAdmin: req.body.avatar,
+            fileUpload: req.body.fileUpload,
+            productName: req.body.productName,
+            description: req.body.description,
+            price: req.body.price,
+            inStock: req.body.inStock,
+            mensProduct: req.body.mensProduct,
+            womensProduct: req.body.womensProduct,
         },
     };
     db_connect
-        .collection('users')
+        .collection('shop')
         .updateOne(myquery, newvalues, function (err, res) {
             if (err) throw err;
             console.log('1 document updated');
@@ -70,11 +71,11 @@ async function updateUser(req, response) {
         });
 };
 
-// Delete a user by id
-async function deleteUser(req, response) {
+// Delete a product by id
+async function deleteProduct(req, response) {
     let db_connect = dbo.getDb('Blog');
     let myquery = { _id: ObjectId(req.params.id) };
-    db_connect.collection('users')
+    db_connect.collection('shop')
         .deleteOne(myquery, function (err, obj) {
             if (err) throw err;
             console.log('1 document deleted');
@@ -83,9 +84,9 @@ async function deleteUser(req, response) {
 };
 
 module.exports = {
-    getAllUsers,
-    findOneUserById,
-    addUser,
-    updateUser,
-    deleteUser
+    getAllProducts,
+    findOneProductById,
+    addProduct,
+    updateProduct,
+    deleteProduct
 }

@@ -8,12 +8,12 @@ const {
     updateBlogPost,
     deleteBlogPost,
     createBlogComment
-} = require('../controllers/usersController');
+} = require('../controllers/blogController');
 
 blogRouter.get('/blog', getAllBlogPost);
 blogRouter.get('/blog/:id', findOneBlogPostById);
 blogRouter.post('/blog/add', addBlogPost);
-blogRouter.post('/blog/:id', updateBlogPost);
+blogRouter.post('/blog-update/:id', updateBlogPost);
 blogRouter.delete('/:id', deleteBlogPost);
 blogRouter.post('/blog/create-comment', createBlogComment);
 

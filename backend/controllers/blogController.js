@@ -5,7 +5,7 @@ const ObjectId = require('mongodb').ObjectId;
 
 // Get all blog posts
 async function getAllBlogPost(req, res) {
-    let db_connect = dbo.getDb("Blog");
+    let db_connect = dbo.getDb('Blog');
     db_connect
         .collection('post')
         .find({})
@@ -17,7 +17,7 @@ async function getAllBlogPost(req, res) {
 
 // Get a single blog post by id
 async function findOneBlogPostById(req, res) {
-    let db_connect = dbo.getDb("Blog");
+    let db_connect = dbo.getDb('Blog');
     let myquery = { _id: ObjectId(req.params.id) };
     db_connect
         .collection('post')
@@ -29,7 +29,7 @@ async function findOneBlogPostById(req, res) {
 
 // Create a new blog post
 async function addBlogPost(req, response) {
-    let db_connect = dbo.getDb("Blog");
+    let db_connect = dbo.getDb('Blog');
     
     let newBlogPost = new BlogPost({
         title: req.body.title,
@@ -49,7 +49,7 @@ async function addBlogPost(req, response) {
 
 // Update blog post by id
 async function updateBlogPost(req, response) {
-    let db_connect = dbo.getDb("Blog");
+    let db_connect = dbo.getDb('Blog');
     let myquery = { _id: ObjectId(req.params.id) };
     let newvalues = {
         $set: {
@@ -73,7 +73,7 @@ async function updateBlogPost(req, response) {
 
 // Delete a blog post by id
 async function deleteBlogPost(req, response) {
-    let db_connect = dbo.getDb("Blog");
+    let db_connect = dbo.getDb('Blog');
     let myquery = { _id: ObjectId(req.params.id) };
     db_connect.collection('post')
         .deleteOne(myquery, function (err, obj) {
