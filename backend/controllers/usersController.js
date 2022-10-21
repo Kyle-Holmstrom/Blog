@@ -80,10 +80,18 @@ async function deleteUser(req, response) {
         });
 };
 
+
+async function countDocumentsInCollection() {
+    let db_connect = dbo.getDb('Blog');
+    let collectionCount = db_connect.collection('users').count();
+    return collectionCount;
+};
+
 module.exports = {
     getAllUsers,
     findOneUserById,
     addUser,
     updateUser,
-    deleteUser
+    deleteUser,
+    countDocumentsInCollection
 }
