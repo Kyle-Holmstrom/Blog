@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router";
+import Button from '@mui/material/Button';
+import './EditUser.css';
  
 export default function Edit() {
  const [form, setForm] = useState({
     firstName: "",
     lastName: "",
     email: "",
-    userName: "",
     password: "",
-    avatar: "",
     isAdmin: "",
  });
  const params = useParams();
@@ -28,7 +28,7 @@ export default function Edit() {
      const user = await response.json();
      if (!user) {
        window.alert(`User with id ${id} not found`);
-       navigate("/");
+       navigate("/show-users");
        return;
      }
  
@@ -53,14 +53,12 @@ export default function Edit() {
      firstName: form.firstName,
      lastName: form.lastName,
      email: form.email,
-     userName: form.userName,
      password: form.password,
-     avatar: form.avatar,
      isAdmin: form.isAdmin,
    };
  
    // This will send a post request to update the data in the database.
-   await fetch(`http://localhost:4000/update/${params.id}`, {
+   await fetch(`http://localhost:4000/user-update/${params.id}`, {
      method: "POST",
      body: JSON.stringify(editedPerson),
      headers: {
@@ -73,75 +71,63 @@ export default function Edit() {
  
  // This following section will display the form that takes input from the user to update the data.
  return (
-   <div>
+   <div className="update-users">
      <h3>Update User</h3>
      <form onSubmit={onSubmit}>
        <div className="form-group">
-         <label htmlFor="name">Name: </label>
+         <label htmlFor="firstName">First Name: </label>
          <input
            type="text"
            className="form-control"
-           id="name"
-           value={form.name}
-           onChange={(e) => updateForm({ name: e.target.value })}
+           id="firstName"
+           value={form.firstName}
+           onChange={(e) => updateForm({ firstName: e.target.value })}
          />
        </div>
        <div className="form-group">
-         <label htmlFor="position">Position: </label>
+         <label htmlFor="lastName">Last Name: </label>
          <input
            type="text"
            className="form-control"
-           id="position"
-           value={form.position}
-           onChange={(e) => updateForm({ position: e.target.value })}
+           id="lastName"
+           value={form.lastName}
+           onChange={(e) => updateForm({ lastName: e.target.value })}
          />
        </div>
        <div className="form-group">
-         <div className="form-check form-check-inline">
-           <input
-             className="form-check-input"
-             type="radio"
-             name="positionOptions"
-             id="positionIntern"
-             value="Intern"
-             checked={form.level === "Intern"}
-             onChange={(e) => updateForm({ level: e.target.value })}
-           />
-           <label htmlFor="positionIntern" className="form-check-label">Intern</label>
-         </div>
-         <div className="form-check form-check-inline">
-           <input
-             className="form-check-input"
-             type="radio"
-             name="positionOptions"
-             id="positionJunior"
-             value="Junior"
-             checked={form.level === "Junior"}
-             onChange={(e) => updateForm({ level: e.target.value })}
-           />
-           <label htmlFor="positionJunior" className="form-check-label">Junior</label>
-         </div>
-         <div className="form-check form-check-inline">
-           <input
-             className="form-check-input"
-             type="radio"
-             name="positionOptions"
-             id="positionSenior"
-             value="Senior"
-             checked={form.level === "Senior"}
-             onChange={(e) => updateForm({ level: e.target.value })}
-           />
-           <label htmlFor="positionSenior" className="form-check-label">Senior</label>
-       </div>
-       </div>
-       <br />
- 
-       <div className="form-group">
+         <label htmlFor="email">E-Mail: </label>
          <input
-           type="submit"
-           value="Update Record"
-           className="btn btn-primary"
+           type="email"
+           className="form-control"
+           id="email"
+           value={form.email}
+           onChange={(e) => updateForm({ email: e.target.value })}
          />
+       </div>
+       <div className="form-group">
+         <label htmlFor="password">Password: </label>
+         <input
+           type="text"
+           className="form-control"
+           id="password"
+           value={form.password}
+           onChange={(e) => updateForm({ password: e.target.value })}
+         />
+       </div>
+       <div className="form-group">
+         <label htmlFor="isAdmin">Admin Status: </label>
+         <input
+           type="text"
+           className="form-control"
+           id="isAdmin"
+           value={form.isAdmin}
+           onChange={(e) => updateForm({ isAdmin: e.target.value })}
+         /> 1 for Admin, 0 for Non-Admin
+       </div>
+       <div className="form-group">
+         <Button variant="contained" className="submit-update-btn" onClick={onSubmit}>
+          Submit
+          </Button>
        </div>
      </form>
    </div>

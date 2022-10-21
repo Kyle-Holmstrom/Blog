@@ -1,4 +1,5 @@
 import React, { useState } from "react"
+import Button from '@mui/material/Button';
 import './Auth.css';
 
 export default function (props) {
@@ -6,6 +7,14 @@ export default function (props) {
 
   const changeAuthMode = () => {
     setAuthMode(authMode === "signIn" ? "signup" : "signIn")
+  }
+
+  async function onSignIn(e) {
+    return 0;
+  }
+
+  async function onSignUp(e) {
+    return 0;
   }
 
   if (authMode === "signIn") {
@@ -39,9 +48,9 @@ export default function (props) {
               />
             </div>
             <div className="submit-grid">
-              <button type="submit" className="btn">
-                Submit
-              </button>
+            <Button variant="contained" onClick={onSignIn} className="btn">
+              Sign In
+            </Button>
             </div>
           </div>
         </form>
@@ -53,7 +62,7 @@ export default function (props) {
     <div className="Auth-form-container">
       <form className="Auth-form">
         <div className="Auth-form-content">
-          <h3 className="Auth-form-title">Sign In</h3>
+          <h3 className="Auth-form-title">Sign Up</h3>
           <div className="already-registered">
             Already registered?{" "}
             <span className="sign-up" onClick={changeAuthMode}>
@@ -61,20 +70,12 @@ export default function (props) {
             </span>
           </div>
           <div className="form-group">
-            <label>Upload Avatar</label>
-            <br/>
-            <input
-              type="file"
-              className="form-control"
-            />
-          </div>
-          <div className="form-group">
             <label>First Name</label>
             <br/>
             <input
               type="text"
               className="form-control"
-              placeholder="e.g Jane"
+              placeholder="John"
             />
           </div>
           <div className="form-group">
@@ -83,7 +84,7 @@ export default function (props) {
             <input
               type="text"
               className="form-control"
-              placeholder="e.g Doe"
+              placeholder="Doe"
             />
           </div>
           <div className="form-group">
@@ -96,6 +97,15 @@ export default function (props) {
             />
           </div>
           <div className="form-group">
+              <label>User Name</label>
+              <br/>
+              <input
+                type="text"
+                className="form-control"
+                placeholder="User Name"
+              />
+            </div>
+          <div className="form-group">
             <label>Password</label>
             <br/>
             <input
@@ -105,9 +115,9 @@ export default function (props) {
             />
           </div>
           <div className="submit-grid">
-            <button type="submit" className="btn">
-              Submit
-            </button>
+            <Button variant="contained" onClick={onSignUp} className="btn">
+              Sign Up
+            </Button>
           </div>
         </div>
       </form>

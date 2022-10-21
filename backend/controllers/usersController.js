@@ -37,8 +37,7 @@ async function addUser(req, response) {
         email: req.body.email,
         userName: req.body.userName,
         password: req.body.password,
-        avatar: req.body.avatar,
-        isAdmin: req.body.isAdmin,
+        isAdmin: req.body.isAdmin = 0,
     });
 
     db_connect.collection('users').insertOne(newUser, function (err, res) {
@@ -57,8 +56,7 @@ async function updateUser(req, response) {
             lastName: req.body.lastName,
             email: req.body.email,
             password: req.body.password,
-            avatar: req.body.avatar,
-            isAdmin: req.body.avatar,
+            isAdmin: req.body.isAdmin,
         },
     };
     db_connect

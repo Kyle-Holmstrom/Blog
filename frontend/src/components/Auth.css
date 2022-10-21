@@ -51,15 +51,10 @@ label {
     margin-top: 0.25rem;
 }
 
-.btn {
-    border-radius: 8px;
-    border: solid 1px skyblue;
-    background-color: inset white;
-    color: black;
-    font-weight: bold;
-    cursor: pointer;
-    margin-top: 0.75rem;
+Button.btn {
+    margin-top: 1rem;
     padding: 3px;
+    width: 7rem;
 }
 
 .btn:hover {

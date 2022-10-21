@@ -9,7 +9,6 @@ export default function Create() {
    email: "",
    userName: "",
    password: "",
-   avatar: "",
    isAdmin: "",
  });
  const navigate = useNavigate();
@@ -46,7 +45,6 @@ export default function Create() {
     email: "",
     userName: "",
     password: "",
-    avatar: "",
     isAdmin: "",
    });
    navigate("/show-users");
@@ -113,20 +111,7 @@ export default function Create() {
          />
        </div>
        <div className="form-group">
-         <label htmlFor="avatar">Avatar</label>
-         &nbsp;
-         <input
-           type="file"
-           className="form-control"
-           id="avatar"
-           value={form.avatar}
-           onChange={(e) => updateForm({ avatar: e.target.value })}
-         />
-       </div>
-       <div className="form-group">
-         <Button variant="contained"
-            type="submit"
-            value="Create person">
+         <Button variant="contained" onClick={onSubmit}>
                 Submit
             </Button>
        </div>
