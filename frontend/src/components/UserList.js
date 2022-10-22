@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Button from '@mui/material/Button';
-import PortraitSharpIcon from '@mui/icons-material/PortraitSharp';
 import './UserList.css';
 
 const User = (props) => (
@@ -11,8 +10,6 @@ const User = (props) => (
         <td>{props.user.email}</td>
         <td>{props.user.userName}</td>
         <td>{props.user.password}</td>
-        {/* Figure out why the avatar image isn't displaying/uploading to mongodb correctly.. */}
-        <td><img src={props.user.avatar} alt='Profile Picture' /></td>
         <td>{props.user.isAdmin}</td>
         <td>
             <Button variant="contained" >
@@ -88,8 +85,7 @@ export default function RecordList() {
                         <th>E-Mail</th>
                         <th>User Name</th>
                         <th>Password</th>
-                        <th>Avatar</th>
-                        <th>Is an Admin</th>
+                        <th>Admin</th>
                     </tr>
                 </thead>
                 <tbody>
