@@ -12,6 +12,8 @@ const Navbar = () => {
     const [count, setCount] = useState(0);
 
     // suppose to get count for navbar.. doesnt work needs fixing.
+    // *** It now works, require further testing by adding and deleting users
+    // *** from database to ensure it properly displays the number. 
     useEffect(() => {
         async function getCount() {
             const response = await fetch(`http://localhost:4000/user-count`);
@@ -44,7 +46,7 @@ const Navbar = () => {
                 Login
             </NavLink>
             <NavLink to="show-users" className="nav-link">
-                <Badge badgeContent={4} sx={{ mr: 0.8}} >
+                <Badge badgeContent={count} sx={{ mr: 0.8}} >
                     <PeopleAltIcon fontSize="inherit" />
                     </Badge>
                 View Registered Users
