@@ -7,7 +7,7 @@ const ObjectId = require('mongodb').ObjectId;
 async function getAllUsers(req, res) {
     let db_connect = dbo.getDb('Blog');
     db_connect
-        .collection("users")
+        .collection('users')
         .find({})
         .toArray(function (err, result) {
             if (err) throw err;
@@ -80,11 +80,16 @@ async function deleteUser(req, response) {
         });
 };
 
-
-async function countDocumentsInCollection() {
+// This function gets the number of records in the user collection
+// will be used to display how many registered users exits.
+async function countDocumentsInCollection(req, res) {
     let db_connect = dbo.getDb('Blog');
-    let collectionCount = db_connect.collection('users').count();
-    return collectionCount;
+    await db_connect
+        .collection('users')
+        .estimatedDocumentCount(function (err, result) {
+            if (err) throw err;
+            res.json(result);
+        });
 };
 
 module.exports = {
