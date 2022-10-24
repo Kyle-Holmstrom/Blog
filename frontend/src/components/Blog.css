@@ -1,15 +1,52 @@
-/*
-.post-list-container {
-    display: grid;
-    text-align: center;
-    grid-template-cols: 3;
-    grid-template-rows: 5;
+.FavoriteIcon {
+	color: #FF1493;
 }
-*/
-.post-list-container {
+.blogpost-container {
 	display: flex;
 	flex-direction: column;
+	justify-content: center;
+	width: 65%;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 3rem;
+	margin-bottom: 1rem;
+	text-align: center;
 }
+
+.blogpost-container > article {
+	margin-left: 20px;
+	margin-right: 20px;
+	text-align: left;
+}
+
+.blogpost-container > aside {
+	display: flex;
+	flex-direction: row-reverse;
+	padding: 10px;
+}
+
+.blogpost-container > footer, ul, li {
+	margin: 7px 0px;
+	list-style: none;
+}
+
+.comment-container > section, p {
+	width: 500px;
+	height: 200px;
+	margin: 0 auto;
+	padding: 10px 0px;
+	text-align: left;
+	font-size: 14px;
+	font-weight: light;
+	display: flex;
+	flex-direction: column-reverse;
+}
+
+.comment-container > h4 {
+	text-decoration: underline;
+}
+
+// below can be deleted if not used for new layout.
 
 Button.add-blogpost-btn {
 	padding: .7rem;
@@ -22,8 +59,4 @@ Button.add-blogpost-btn {
 	text-decoration: none;
 	color: white;
 	font-weight: bold;
-}
-
-.post-list-container > h3 {
-	text-align: center;
 }

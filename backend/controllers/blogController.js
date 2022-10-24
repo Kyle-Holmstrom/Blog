@@ -7,7 +7,7 @@ const ObjectId = require('mongodb').ObjectId;
 async function getAllBlogPost(req, res) {
     let db_connect = dbo.getDb('Blog');
     db_connect
-        .collection('post')
+        .collection('posts')
         .find({})
         .toArray(function (err, result) {
             if (err) throw err;
@@ -20,7 +20,7 @@ async function findOneBlogPostById(req, res) {
     let db_connect = dbo.getDb('Blog');
     let myquery = { _id: ObjectId(req.params.id) };
     db_connect
-        .collection('post')
+        .collection('posts')
         .findOne(myquery, function (err, result) {
             if (err) throw err;
             res.json(result);
@@ -41,7 +41,7 @@ async function addBlogPost(req, response) {
         createdAt: req.body.createdAt,
     });
 
-    db_connect.collection('post').insertOne(newBlogPost, function (err, res) {
+    db_connect.collection('posts').insertOne(newBlogPost, function (err, res) {
         if (err) throw err;
         response.json(res);
     });
@@ -63,7 +63,7 @@ async function updateBlogPost(req, response) {
         },
     };
     db_connect
-        .collection('post')
+        .collection('posts')
         .updateOne(myquery, newvalues, function (err, res) {
             if (err) throw err;
             console.log('1 document updated');
@@ -75,7 +75,7 @@ async function updateBlogPost(req, response) {
 async function deleteBlogPost(req, response) {
     let db_connect = dbo.getDb('Blog');
     let myquery = { _id: ObjectId(req.params.id) };
-    db_connect.collection('post')
+    db_connect.collection('posts')
         .deleteOne(myquery, function (err, obj) {
             if (err) throw err;
             console.log('1 document deleted');
