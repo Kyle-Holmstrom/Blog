@@ -13,7 +13,18 @@
 	text-align: center;
 }
 
+.blogpost-hero {
+	background-image: url('https://artbyamyp.com/wp-content/uploads/2017/06/IMG_0871-767x1024.jpg');
+	height: 20vh;
+	background-size: cover;
+}
+
+.blogpost-hero > h1 {
+	margin-top: 3.5rem;
+}
+
 .blogpost-container > article {
+	margin-top: 15px;
 	margin-left: 20px;
 	margin-right: 20px;
 	text-align: left;
@@ -30,20 +41,31 @@
 	list-style: none;
 }
 
+.comment-container {
+	margin-top: 2rem;
+}
+
+.comment-container > section {
+	border: 1px solid gray;
+	background-color: ghostwhite;
+}
+
 .comment-container > section, p {
 	width: 500px;
 	height: 200px;
 	margin: 0 auto;
-	padding: 10px 0px;
+	padding: 10px 5px;
 	text-align: left;
 	font-size: 14px;
 	font-weight: light;
 	display: flex;
 	flex-direction: column-reverse;
+	color: black;
 }
 
-.comment-container > h4 {
-	text-decoration: underline;
+.comment-container > textarea {
+	background-color: ghostwhite;
+	color: black;
 }
 
 // below can be deleted if not used for new layout.
