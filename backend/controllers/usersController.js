@@ -92,11 +92,31 @@ async function countDocumentsInCollection(req, res) {
         });
 };
 
+// checks the database to see if a user exists by checking for a matching
+// username and password.
+async function verifySignIn(req, res) {
+    let db_connect = dbo.getDb('Blog');
+    await db_connect
+        .collection('users')
+        .findOne({
+            userName: req.body.userName,
+            password: req.body.password
+        },function (err, user) {
+            if (err) throw err;
+            if (!user) {
+                return res.status(200).send("User not found");
+            }
+            return res.status(200).send("You logged in successfully.");
+        });
+
+}
+
 module.exports = {
     getAllUsers,
     findOneUserById,
     addUser,
     updateUser,
     deleteUser,
-    countDocumentsInCollection
+    countDocumentsInCollection,
+    verifySignIn
 }

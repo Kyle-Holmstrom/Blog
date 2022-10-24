@@ -2,35 +2,28 @@ import React, { useState } from "react"
 import Button from '@mui/material/Button';
 import './Auth.css';
 
+import AddUser from './AddUser';
+
 export default function (props) {
-  let [authMode, setAuthMode] = useState("signIn")
+  const [authMode, setAuthMode] = useState("signIn")
+  const [login, setLogin] = useState('');
 
   const changeAuthMode = () => {
     setAuthMode(authMode === "signIn" ? "signup" : "signIn")
   }
 
-  async function onSignIn(e) {
-	  try {
-		  await fetch('localhost:4000/<get user by name>');
-		  // check user email and password to ensure they match and
-		  // exist
-
-	  } catch (e) {
-		  throw new Error(e.message);
-	  }
-
-	  return 0;
-  }
-
-  async function onSignUp(e) {
-	  try {
-		  await fetch('localhost:4000/<submit user info to database>');
-		  // verify the data enter is correct before submitting
-	  } catch (e) {
-		  throw new Error(e.message);
-	  }
-
-	  return 0;
+  // Not working should verify user information...
+  async function onSignIn() {
+		const response = await fetch('localhost:4000/login');
+		// check user email and password to ensure they match and
+		// exist
+    if (!response.ok) {
+      const message = `An error occurred: ${response.statusText}`;
+      window.alert(message);
+      return;
+    }
+    const login = await response.json();
+    setLogin(login);
   }
 
   if (authMode === "signIn") {
@@ -46,12 +39,13 @@ export default function (props) {
               </span>
             </div>
             <div className="form-group">
-              <label>Email</label>
+              <label>Username</label>
               <br/>
               <input
-                type="email"
+                type="text"
+                id="userName"
                 className="form-control"
-                placeholder="Enter email"
+                placeholder="Enter username"
               />
             </div>
             <div className="form-group">
@@ -59,6 +53,7 @@ export default function (props) {
               <br/>
               <input
                 type="password"
+                id="password"
                 className="form-control"
                 placeholder="Enter password"
               />
@@ -75,68 +70,16 @@ export default function (props) {
   }
 
   return (
-    <div className="Auth-form-container">
-      <form className="Auth-form">
-        <div className="Auth-form-content">
-          <h3 className="Auth-form-title">Sign Up</h3>
-          <div className="already-registered">
-            Already registered?{" "}
-            <span className="sign-up" onClick={changeAuthMode}>
-              Sign In
-            </span>
-          </div>
-          <div className="form-group">
-            <label>First Name</label>
-            <br/>
-            <input
-              type="text"
-              className="form-control"
-              placeholder="John"
-            />
-          </div>
-          <div className="form-group">
-            <label>Last Name</label>
-            <br/>
-            <input
-              type="text"
-              className="form-control"
-              placeholder="Doe"
-            />
-          </div>
-          <div className="form-group">
-            <label>Email</label>
-            <br/>
-            <input
-              type="email"
-              className="form-control"
-              placeholder="Email Address"
-            />
-          </div>
-          <div className="form-group">
-              <label>User Name</label>
-              <br/>
-              <input
-                type="text"
-                className="form-control"
-                placeholder="User Name"
-              />
-            </div>
-          <div className="form-group">
-            <label>Password</label>
-            <br/>
-            <input
-              type="password"
-              className="form-control"
-              placeholder="Password"
-            />
-          </div>
-          <div className="submit-grid">
-            <Button variant="contained" onClick={onSignUp} className="btn">
-              Sign Up
-            </Button>
+        <div className="Auth-form-container">
+          <div className="Auth-form">
+            <AddUser />
+            <div className="already-registered">
+              Already registered?{" "}
+             <span className="sign-up" onClick={changeAuthMode}>
+                Sign In
+           </span>
+           </div>
           </div>
         </div>
-      </form>
-    </div>
   )
 }
