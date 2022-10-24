@@ -37,6 +37,7 @@ label {
 .sign-up {
     cursor: pointer;
     font-weight: bold;
+    color: lime;
 }
 
 .not-registered {

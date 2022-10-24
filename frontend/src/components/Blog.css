@@ -1,6 +1,29 @@
-.blog-container {
+/*
+.post-list-container {
     display: grid;
     text-align: center;
     grid-template-cols: 3;
     grid-template-rows: 5;
+}
+*/
+.post-list-container {
+	display: flex;
+	flex-direction: column;
+}
+
+Button.add-blogpost-btn {
+	padding: .7rem;
+	width: 24%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.add-blogpost-link {
+	text-decoration: none;
+	color: white;
+	font-weight: bold;
+}
+
+.post-list-container > h3 {
+	text-align: center;
 }

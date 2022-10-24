@@ -10,11 +10,27 @@ export default function (props) {
   }
 
   async function onSignIn(e) {
-    return 0;
+	  try {
+		  await fetch('localhost:4000/<get user by name>');
+		  // check user email and password to ensure they match and
+		  // exist
+
+	  } catch (e) {
+		  throw new Error(e.message);
+	  }
+
+	  return 0;
   }
 
   async function onSignUp(e) {
-    return 0;
+	  try {
+		  await fetch('localhost:4000/<submit user info to database>');
+		  // verify the data enter is correct before submitting
+	  } catch (e) {
+		  throw new Error(e.message);
+	  }
+
+	  return 0;
   }
 
   if (authMode === "signIn") {

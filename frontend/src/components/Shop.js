@@ -8,7 +8,7 @@ const Shop = () => {
             <h1>Welcome to the Shop!</h1>
             <h4>Make a purchase to support your favorite author!</h4>
 
-
+	    {/*
 	    <div style={{display: 'flex', flexDirection: 'row', justifyContent: 'space-evenly'}}>
 	    <img src={'https://www.feedinspiration.com/wp-content/uploads/2015/06/Clothing-For-Teenage-Girls-.jpg'} 
 		style={{width: '120px', height: '140'}}
@@ -23,7 +23,7 @@ const Shop = () => {
 		style={{width: '120px', height: '140'}} />
 	</div>
 
-
+	*/}
 
         </div>
     );
