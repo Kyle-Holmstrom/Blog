@@ -16,7 +16,7 @@ userRouter.get('/user/:id', findOneUserById);
 userRouter.get('/user-count', countDocumentsInCollection);
 userRouter.post('/user/add', addUser);
 userRouter.post('/user-update/:id', updateUser);
-userRouter.post('/login', verifySignIn)
+userRouter.post('/login', verifySignIn);
 userRouter.delete('/:id', deleteUser);
 
 module.exports = userRouter;

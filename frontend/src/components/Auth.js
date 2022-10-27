@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState } from 'react';
 import Button from '@mui/material/Button';
 import './Auth.css';
 
@@ -6,30 +6,38 @@ import AddUser from './AddUser';
 
 export default function (props) {
   const [authMode, setAuthMode] = useState("signIn")
-  const [login, setLogin] = useState('');
 
   const changeAuthMode = () => {
     setAuthMode(authMode === "signIn" ? "signup" : "signIn")
   }
 
-  // Not working should verify user information...
-  async function onSignIn() {
-		const response = await fetch('localhost:4000/login');
-		// check user email and password to ensure they match and
-		// exist
-    if (!response.ok) {
-      const message = `An error occurred: ${response.statusText}`;
-      window.alert(message);
-      return;
-    }
-    const login = await response.json();
-    setLogin(login);
+  function handleLogin(e) {
+    e.preventDefault();
+    
+    const form = e.target;
+    const user = {
+      userName: form[0].value,
+      password: form[1].value
+    };
+
+    fetch('/login', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(user)
+    })
+    .then(res => res.json())
+    .then(data => {
+      localStorage.setItem('token', data.token)
+    });
+    
   }
 
   if (authMode === "signIn") {
     return (
       <div className="Auth-form-container">
-        <form className="Auth-form">
+        <form className="Auth-form" onSubmit={event => handleLogin(event)}>
           <div className="Auth-form-content">
             <h3 className="Auth-form-title">Sign In</h3>
             <div className="not-registered">
@@ -43,7 +51,7 @@ export default function (props) {
               <br/>
               <input
                 type="text"
-                id="userName"
+                required
                 className="form-control"
                 placeholder="Enter username"
               />
@@ -53,13 +61,13 @@ export default function (props) {
               <br/>
               <input
                 type="password"
-                id="password"
+                required
                 className="form-control"
                 placeholder="Enter password"
               />
             </div>
             <div className="submit-grid">
-            <Button variant="contained" onClick={onSignIn} className="btn">
+            <Button variant="contained" type="submit" value="Submit" className="btn">
               Sign In
             </Button>
             </div>
