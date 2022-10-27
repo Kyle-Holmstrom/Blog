@@ -1,5 +1,55 @@
+.FavoriteIcon {
+    padding: 6px;
+}
 .shop-container {
-    display: block;
-    text-align: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	width: 65%;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 3rem;
+	margin-bottom: 1rem;
+	text-align: center;
 }
 
+.shop-hero {
+	background-image: url('https://www.facileme.com.br/wp-content/uploads/2018/03/5-Tenha-uma-oferta-1.jpg');
+	height: 20vh;
+	background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.shop-hero > h1 {
+	margin-top: 3.5rem;
+    color: snow;
+}
+
+.shop-container > article {
+	margin-top: 15px;
+	margin-left: 20px;
+	margin-right: 20px;
+	text-align: center;
+}
+
+.shop-container > aside {
+	display: flex;
+	flex-direction: row-reverse;
+	padding: 10px;
+    margin-right: 10px;
+}
+
+.shop-container > footer, ul, li {
+	margin: 7px 0px;
+	list-style: none; 
+}
+
+.shop-greeting {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: 0 auto;
+    width: 65%;
+    text-align: center;
+}
