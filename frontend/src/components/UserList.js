@@ -9,7 +9,7 @@ const User = (props) => (
         <td>{props.user.lastName}</td>
         <td>{props.user.email}</td>
         <td>{props.user.userName}</td>
-        <td>{props.user.password}</td>
+        <td>{props.user.password = "*******"}</td>
         <td>{props.user.isAdmin}</td>
         <td>
             <Button variant="contained" >

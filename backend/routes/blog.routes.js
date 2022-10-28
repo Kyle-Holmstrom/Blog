@@ -7,7 +7,7 @@ const {
     addBlogPost,
     updateBlogPost,
     deleteBlogPost,
-    createBlogComment
+    createComment
 } = require('../controllers/blogController');
 
 blogRouter.get('/blog', getAllBlogPost);
@@ -15,6 +15,6 @@ blogRouter.get('/blog/:id', findOneBlogPostById);
 blogRouter.post('/blog/add', addBlogPost);
 blogRouter.post('/blog-update/:id', updateBlogPost);
 blogRouter.delete('/:id', deleteBlogPost);
-blogRouter.post('/blog/create-comment', createBlogComment);
+blogRouter.post('/blog/comment/:id', createComment);
 
 module.exports = blogRouter;

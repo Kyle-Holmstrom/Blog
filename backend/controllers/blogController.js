@@ -83,10 +83,23 @@ async function deleteBlogPost(req, response) {
         });
 };
 
-// Create a comment on a blog post
-async function createBlogComment() {
-    return 0;
-}
+// post a comment on a blog post
+async function createComment(req, res) {
+    let db_connect = dbo.getDb('Blog');
+    let myquery = { _id: ObjectId(req.params.id) };
+    let comment = {
+        $set: {
+            comments: req.body.comments,
+        }
+    }
+    db_connect
+        .collection('posts')
+        .updateOne(myquery, comment, function (err, res) {
+            if (err) throw err;
+            console.log('1 document updated');
+            response.json(res);
+        });
+};
 
 module.exports = {
     getAllBlogPost,
@@ -94,5 +107,5 @@ module.exports = {
     addBlogPost,
     updateBlogPost,
     deleteBlogPost,
-    createBlogComment
+    createComment
 }

@@ -3,7 +3,7 @@ import Badge from '@mui/material/Badge';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import Card from '@mui/material/Card';
 import './Blog.css';
-
+import { Button } from '@mui/material';
 
 const BlogPost = (props) => (
     <Card variant="outlined" className="blogpost-container" >
@@ -17,11 +17,15 @@ const BlogPost = (props) => (
                 <li>Created: {props.post.createdAt}</li>
             </ul> 
         </footer>
-        <div className='comment-container'>
+        <div className='comment-container' >
             <section>
                 <p>{props.post.comments}</p>
             </section>
             <textarea rows="5" cols="67" placeholder='Leave a comment!' />
+            <br/>
+            <Button variant='contained'>
+                Send
+            </Button>
         </div>
         <aside>
             <Badge badgeContent={props.post.upvote} >

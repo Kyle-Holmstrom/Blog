@@ -1,16 +1,26 @@
 .FavoriteIcon {
     padding: 6px;
 }
+
+.FavoriteIcon:hover {
+	cursor: pointer;
+}
+
 .shop-container {
-	display: flex;
+	/* display: flex;
 	flex-direction: column;
-	justify-content: center;
-	width: 65%;
+	justify-content: center; */
+	display: inline-block;
+	width: 50%;
 	margin-left: auto;
 	margin-right: auto;
 	margin-top: 3rem;
 	margin-bottom: 1rem;
 	text-align: center;
+}
+
+.shop-container:nth-child(5) {
+	position: absolute;
 }
 
 .shop-hero {

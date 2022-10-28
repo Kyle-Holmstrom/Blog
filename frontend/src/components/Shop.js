@@ -5,7 +5,15 @@ import Card from '@mui/material/Card';
 import './Shop.css';
 
 const ShopItem = (props) => {
+    const [count, setCount] = useState(0);
+
+    function addToCart() {
+        setCount(count + 1);
+    }
+    
     return(
+        
+        // Change this into a Grid with more content
         <div className="shop-container">
 			<Card variant="outlined" className="shop-container" >
 				<div className='shop-hero'>
@@ -14,15 +22,15 @@ const ShopItem = (props) => {
 				<article>{props.shop.description}</article>
 				<footer>
 					<ul>
-						<li>Price: {props.shop.price}</li>
+						<li>Price: ${props.shop.price}</li>
 						<li>In Stock: {props.shop.inStock}</li>
 						<li>Mens Product: {props.shop.mensProduct}</li>
-						<li>Womens Product: {props.shop.womensProduct}</li>
+						<li>Women's Product: {props.shop.womensProduct}</li>
 					</ul> 
 				</footer>
 				<aside>
-					<Badge badgeContent={1} >
-						<AddShoppingCartIcon color="primary" className="FavoriteIcon" />
+					<Badge badgeContent={count} >
+						<AddShoppingCartIcon color="primary" className="FavoriteIcon" onClick={addToCart} />
 					</Badge>
 				</aside>
 			</Card>
