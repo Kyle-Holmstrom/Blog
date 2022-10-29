@@ -4,7 +4,6 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 import Card from '@mui/material/Card';
 import './Blog.css';
 import { Button } from '@mui/material';
-import {Link} from 'react-router-dom';
 
 const BlogPost = (props) => (
     <Card variant="outlined" className="blogpost-container" >
