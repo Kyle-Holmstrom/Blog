@@ -4,6 +4,7 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 import Card from '@mui/material/Card';
 import './Blog.css';
 import { Button } from '@mui/material';
+import {Link} from 'react-router-dom';
 
 const BlogPost = (props) => (
     <Card variant="outlined" className="blogpost-container" >
@@ -24,11 +25,11 @@ const BlogPost = (props) => (
             <textarea rows="5" cols="67" placeholder='Leave a comment!' />
             <br/>
             <Button variant='contained'>
-                Send
+                <leaveComment>Send</leaveComment>
             </Button>
         </div>
         <aside>
-            <Badge badgeContent={props.post.upvote} >
+            <Badge badgeContent={props.post.upvote}>
                 <FavoriteIcon className="FavoriteIcon" />
             </Badge>
         </aside>
@@ -37,6 +38,7 @@ const BlogPost = (props) => (
 
 export default function Blog() {
     const [posts, setPost] = useState([]);
+    const [comment, setComment] = useState([]);
 
     // This method will fetch the blog post from the database.
     useEffect(() => {
@@ -69,6 +71,16 @@ export default function Blog() {
         setPost(newPost);
     }
 
+    // calls the create comment endpoint api
+    async function leaveComment(id) {
+        await fetch(`http://localhost:4000/blog/add-comment/${id}`, {
+            method: 'PUT'
+        });
+
+        const newComment = comment.filter((el) => el._id !== id);
+        setComment(newComment);
+    }
+
     // This method will map out the users on the table
     function blogPostList() {
         return posts.map((post) => {
@@ -76,6 +88,7 @@ export default function Blog() {
                 <BlogPost    
                     post={post}
                     deleteBlogPost={() => deleteBlogPost(posts._id)}
+                    leaveComment={() => leaveComment(posts._id)}
                     key={posts._id}
                     />
             );
