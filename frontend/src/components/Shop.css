@@ -7,7 +7,9 @@
 }
 
 .shop-container {
-	/* display: flex;
+	/* 
+	This will display it in a column like the blog section.
+	display: flex;
 	flex-direction: column;
 	justify-content: center; */
 	display: inline-block;
@@ -26,6 +28,8 @@
 .shop-hero {
 	background-image: url('https://www.facileme.com.br/wp-content/uploads/2018/03/5-Tenha-uma-oferta-1.jpg');
 	height: 20vh;
+	display: flex;
+	justify-content: center;
 	background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -33,7 +37,7 @@
 
 .shop-hero > h1 {
 	margin-top: 3.5rem;
-    color: snow;
+	color: #0f0f0f;
 }
 
 .shop-container > article {
