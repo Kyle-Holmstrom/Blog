@@ -15,7 +15,7 @@ const ShopItem = (props) => {
         
         // Change this into a Grid with more content
         <div className="shop-container">
-			<Card variant="outlined" className="shop-container" >
+			<Card variant="outlined" className="shop-container-card" >
 				<div className='shop-hero'>
 					<h1>{props.shop.productName}</h1>
 				</div>
@@ -34,23 +34,6 @@ const ShopItem = (props) => {
 					</Badge>
 				</aside>
 			</Card>
-	    
-	    {/* <div style={{display: 'flex', flexDirection: 'row', justifyContent: 'space-evenly'}}>
-	    <img src={'https://www.feedinspiration.com/wp-content/uploads/2015/06/Clothing-For-Teenage-Girls-.jpg'} 
-		style={{width: '120px', height: '140'}}
-		    />
-	
-	    <img src={'https://www.theskinnybeep.com/wp-content/uploads/2016/10/Fashion-Model-Valentino-Catwalk.jpg'} 
-		style={{width: '120px', height: '140'}}
-	    />
-	
-	
-	    <img src={'https://allforfashiondesign.com/wp-content/uploads/2013/05/fa-9.jpg'} 
-		style={{width: '120px', height: '140'}} />
-	</div> */}
-
-	
-
         </div>
     );
 }

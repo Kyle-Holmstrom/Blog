@@ -6,6 +6,22 @@
 	cursor: pointer;
 }
 
+.shop-container-card {
+	margin: 0px 10px;
+}
+
+.shop-container-card > aside {
+	display: flex;
+	flex-direction: row-reverse;
+	padding: 10px;
+}
+
+.shop-container-card:hover {
+	border: 1px solid #eb879c;
+	/* border: 1px solid #0f0f0f; */
+	background-color: #f2f3f4;
+}
+
 .shop-container {
 	/* 
 	This will display it in a column like the blog section.

@@ -23,3 +23,8 @@ td {
     text-align: center;
     padding: 5px;
 }
+
+tr:hover {
+    border: 1px solid #0f0f0f;
+	background-color: #f2f3f4;
+}

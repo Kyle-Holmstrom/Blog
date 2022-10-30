@@ -24,9 +24,14 @@
 }
 
 .blogpost-container > article {
-	margin-top: 15px;
-	margin-left: 20px;
-	margin-right: 20px;
+	margin-top: 5rem;
+	text-indent: 3rem;
+	line-height: 2.5rem;
+	/* margin-left: 20px;
+	margin-right: 20px; */
+	margin-left: auto;
+	margin-right: auto;
+	width: 55%;
 	text-align: left;
 }
 
