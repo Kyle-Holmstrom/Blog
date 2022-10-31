@@ -12,8 +12,6 @@ const ShopItem = (props) => {
     }
     
     return(
-        
-        // Change this into a Grid with more content
         <div className="shop-container">
 			<Card variant="outlined" className="shop-container-card" >
 				<div className='shop-hero'>
@@ -61,16 +59,6 @@ export default function Shop() {
         return;
 
     }, [shopItem.length]);
-    
-    // this method will delete a record
-    async function deleteShopItem(id) {
-        await fetch(`http://localhost:4000/${id}`, {
-            method: "DELETE"
-        });
-
-        const newList = shopItem.filter((el) => el._id !== id);
-        setShopItem(newList);
-    }
 
     //This method will map out products in cards
     function shopList() {
@@ -78,7 +66,6 @@ export default function Shop() {
             return (
                 <ShopItem    
                     shop={shop}
-                    deleteShopItem={() => deleteShopItem(shop._id)}
                     key={shop._id}
                     />
             );
