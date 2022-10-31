@@ -36,6 +36,7 @@ export default function (props) {
 
   if (authMode === "signIn") {
     return (
+      // Sign into account
       <div className="Auth-form-container">
         <form className="Auth-form" onSubmit={event => handleLogin(event)}>
           <div className="Auth-form-content">
@@ -76,7 +77,7 @@ export default function (props) {
       </div>
     )
   }
-
+  // Sign up for an account
   return (
         <div className="Auth-form-container">
           <div className="Auth-form">
