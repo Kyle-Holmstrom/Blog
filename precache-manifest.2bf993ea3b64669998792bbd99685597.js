@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "80553aea6aa7265efcd1",
+    "revision": "96a0823823d3b27ee946",
     "url": "/Kyle-Holmstrom/blog/static/css/main.33a49151.chunk.css"
   },
   {
-    "revision": "80553aea6aa7265efcd1",
-    "url": "/Kyle-Holmstrom/blog/static/js/main.80553aea.chunk.js"
+    "revision": "96a0823823d3b27ee946",
+    "url": "/Kyle-Holmstrom/blog/static/js/main.96a08238.chunk.js"
   },
   {
     "revision": "42875a32674453d344d8",
@@ -16,7 +16,7 @@ self.__precacheManifest = [
     "url": "/Kyle-Holmstrom/blog/static/js/runtime~main.5216bec8.js"
   },
   {
-    "revision": "79da3e3b55f0f46e3b3c1d01cd3b0171",
+    "revision": "592ed5b8bc693995331f60cfa9d020b5",
     "url": "/Kyle-Holmstrom/blog/index.html"
   }
 ];
