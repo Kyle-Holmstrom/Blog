@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/Kyle-Holmstrom/blog/precache-manifest.b890a86afe5cd051456a70e4da488a54.js"
+  "/Kyle-Holmstrom/blog/precache-manifest.897eb7cf069418b2e5a535f20ba0c72b.js"
 );
 
 workbox.clientsClaim();
