@@ -2,7 +2,7 @@
     display: flex;
     justify-content: space-around;
     /* justify-content: flex-end; */
-    background: linear-gradient(to right, transparent, skyblue, white);
+    background: linear-gradient(to right, transparent,white, white, transparent);
     padding: 8px;
     font-size: 17px;
     font-weight: bold;

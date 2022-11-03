@@ -14,7 +14,8 @@
 }
 
 .blogpost-hero {
-	background-image: url('https://artbyamyp.com/wp-content/uploads/2017/06/IMG_0871-767x1024.jpg');
+	/* background-image: url('https://artbyamyp.com/wp-content/uploads/2017/06/IMG_0871-767x1024.jpg'); */
+	background-image: url('https://images.fineartamerica.com/images/artworkimages/mediumlarge/2/black-and-white-contemporary-abstract-circle-painting-holly-anderson.jpg');
 	height: 20vh;
 	background-size: cover;
 }
