@@ -17,8 +17,6 @@ class App extends Component {
     return(
       <div>
         <Navbar />
-
-        {/* Handle routing to shop section */}
         <Routes>
           <Route exact path="/" element={<Blog />} />
           <Route path="/shop" element={<Shop />} />

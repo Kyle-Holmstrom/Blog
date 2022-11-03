@@ -9,7 +9,7 @@ const User = (props) => (
         <td>{props.user.lastName}</td>
         <td>{props.user.email}</td>
         <td>{props.user.userName}</td>
-        <td>{props.user.password = "*******"}</td>
+        <td>{props.user.password = "🙊🙊🙊"}</td>
         <td>{props.user.isAdmin}</td>
         <td>
             <Button variant="contained" >
@@ -76,10 +76,10 @@ export default function RecordList() {
 
     return (
         <div className="user-list-container">
-            <h3>User List</h3>
+            <h3>Registered Users List</h3>
             <table>
                 <thead>
-                    <tr>
+                    <tr className="table-heading">
                         <th>First Name</th>
                         <th>Last Name</th>
                         <th>E-Mail</th>

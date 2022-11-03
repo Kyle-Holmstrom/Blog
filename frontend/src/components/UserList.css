@@ -3,10 +3,11 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    color: #f2f3f4;
 }
 
 .add-user-link {
-    color: white;
+    color: #f2f3f4;
     text-decoration: none;
 }
 
@@ -19,12 +20,19 @@ th {
 }
 
 td {
-    border: 1px solid black;
+    border: 1px solid white;
     text-align: center;
     padding: 5px;
 }
 
 tr:hover {
-    border: 1px solid #0f0f0f;
-	background-color: #f2f3f4;
+	background-color: #1f1f1f;
+}
+
+.table-heading:hover {
+	background-color: #0f0f0f;
+}
+
+tr > td > Button:hover {
+	transform: scale(1.05);
 }

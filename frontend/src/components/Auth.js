@@ -40,7 +40,7 @@ export default function (props) {
       <div className="Auth-form-container">
         <form className="Auth-form" onSubmit={event => handleLogin(event)}>
           <div className="Auth-form-content">
-            <h3 className="Auth-form-title">Sign In</h3>
+            <h3 className="Auth-form-title">Login In</h3>
             <div className="not-registered">
               Not registered yet?{" "}
               <span className="sign-up" onClick={changeAuthMode}>
@@ -69,7 +69,7 @@ export default function (props) {
             </div>
             <div className="submit-grid">
             <Button variant="contained" type="submit" value="Submit" className="btn">
-              Sign In
+              Submit
             </Button>
             </div>
           </div>

@@ -16,6 +16,7 @@
 }
 
 .nav-link:hover {
-    background-color: #eb879c;
+    background: linear-gradient(#333, #0f0f0f);
+    color: #f2f3f4;
     border-radius: 10px;
 }

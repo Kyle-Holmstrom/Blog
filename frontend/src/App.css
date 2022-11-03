@@ -2,10 +2,25 @@
 @import url('https://fonts.googleapis.com/css2?family=Amarante&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 
+html {
+    background-color: #0f0f0f;
+}
+
 body {
     font-family: 'Open Sans', 'Amarante', 'Poppins', sans-serif;
     font-weight: bold;
     color: black;
     padding: 0;
     margin: 0;
+}
+
+::-webkit-scrollbar {
+    background: #0f0f0f;
+    width: 4px;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #f2f3f4;
+    border-radius: 10px;
 }
