@@ -56,10 +56,6 @@ Button.btn {
     width: 7rem;
 }
 
-.btn:hover {
-    background: linear-gradient(36deg, transparent, skyblue, skyblue, blue);
-}
-
 .already-registered {
     text-align: center;
     margin-top: 10px;
