@@ -23,7 +23,7 @@ const BlogPost = (props) => (
             </section>
             <textarea rows="5" cols="67" placeholder='Leave a comment!' />
             <br/>
-            <Button variant='contained' onClick={props.comment}>
+            <Button variant='contained'>
                 Send
             </Button>
         </div>
@@ -37,7 +37,6 @@ const BlogPost = (props) => (
 
 export default function Blog() {
     const [posts, setPost] = useState([]);
-    // const [comment, setComment] = useState([]);
 
     // This method will fetch the blog post from the database.
     useEffect(() => {
@@ -65,27 +64,9 @@ export default function Blog() {
         await fetch(`http://localhost:4000/${id}`, {
             method: "DELETE"
         });
-
         const newPost = posts.filter((el) => el._id !== id);
         setPost(newPost);
     }
-
-    // useEffect(() => {
-    //     // calls the create comment endpoint api
-    //     async function leaveComment(id) {
-    //         const response = await fetch(`http://localhost:4000/blog/add-comment/${id}`);
-
-    //         if (!response.ok) {
-    //             const message = `An error occurred: ${response.statusText}`;
-    //             window.alert(message);
-    //             return;
-    //         }
-
-    //         const newComment = comment.filter((el) => el._id !== id);
-    //         setComment(newComment);
-    //     }
-    //     return;
-    // }, [comment.length]);
 
     // This method will map out the users on the table
     function blogPostList() {
@@ -94,7 +75,6 @@ export default function Blog() {
                 <BlogPost    
                     post={post}
                     deleteBlogPost={() => deleteBlogPost(post._id)}
-                    // leaveComment={() => leaveComment(post._id)}
                     key={post._id}
                     />
             );
