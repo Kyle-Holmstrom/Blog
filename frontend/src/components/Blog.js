@@ -62,7 +62,7 @@ export default function Blog() {
     
     // this method will delete a record
     async function deleteBlogPost(id) {
-        await fetch(`http://localhost:4000/${id}`, {
+        await fetch(`http://localhost:4000/blog/${id}`, {
             method: "DELETE"
         });
         const newPost = posts.filter((el) => el._id !== id);
