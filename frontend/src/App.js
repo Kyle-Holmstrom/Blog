@@ -18,8 +18,8 @@ class App extends Component {
       <div>
         <Navbar />
         <Routes>
-          <Route exact path="/" element={<Blog />} />
-          <Route path="/shop" element={<Shop />} />
+          <Route exact path="/blog" element={<Blog />} />
+          <Route path="shop" element={<Shop />} />
           <Route path="auth" element={<Auth />} />
           <Route path="show-users" element={<RecordList />} />
           <Route path="add-user" element={<Create />} />

@@ -33,7 +33,7 @@ const Navbar = () => {
 
     return(
         <Breadcrumbs className="primary-nav">
-            <NavLink to="/" className="nav-link">
+            <NavLink to="blog" className="nav-link">
                 <HomeIcon sx={{ mr: 0.5}} fontSize="inherit" />
                 Home
             </NavLink>
