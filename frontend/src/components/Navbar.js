@@ -41,13 +41,13 @@ const Navbar = () => {
                 <StoreIcon sx={{ mr: 0.5}} fontSize="inherit" />
                 Shop
             </NavLink>
-            <NavLink to="show-users" className="nav-link">
+            <NavLink to="users" className="nav-link">
                 <Badge badgeContent={count} sx={{ mr: 0.8}} >
                     <PeopleAltIcon fontSize="inherit" />
                     </Badge>
                 View Registered Users
             </NavLink>
-            <NavLink to="auth" className="nav-link">
+            <NavLink to="login" className="nav-link">
                 <LoginIcon sx={{ mr: 0.5}} fontSize="inherit" />
                 Login
             </NavLink>
