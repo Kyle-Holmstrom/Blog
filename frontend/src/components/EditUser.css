@@ -3,4 +3,14 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    color: #0f0f0f;
+    background: linear-gradient(to bottom, transparent, white, white, white, transparent);
+    width: 40%;
+    margin: auto;
+    padding: 0px;
+    margin-top: 5rem;
+}
+
+.form-group-btn {
+    padding: 2rem 0px;
 }

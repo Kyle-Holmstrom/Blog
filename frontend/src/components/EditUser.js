@@ -124,7 +124,7 @@ export default function Edit() {
            onChange={(e) => updateForm({ isAdmin: e.target.value })}
          /> 1 for Admin, 0 for Non-Admin
        </div>
-       <div className="form-group">
+       <div className="form-group-btn">
          <Button variant="contained" className="submit-update-btn" onClick={onSubmit}>
           Submit
           </Button>
