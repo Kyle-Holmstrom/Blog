@@ -4,6 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "node backend/index.js",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install npm && run build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": ["heroku"],
@@ -25,5 +27,6 @@
   },
   "engines": {
     "node": "16.13.2"
-  }
+  },
+  "proxy": "http://localhost:4000"
 }
