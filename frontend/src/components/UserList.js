@@ -35,7 +35,7 @@ export default function RecordList() {
     useEffect(() => {
         async function getUsers() {
             // const response = await fetch(`http://localhost:4000/users`);
-            const response = await fetch(`https://kyle-holmstrom.github.io/users`);
+            const response = await fetch(`https://kyle-holmstrom.github.io/blog/users`);
 
             if (!response.ok) {
                 const message = `An error occurred: ${response.statusText}`;

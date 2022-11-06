@@ -10,7 +10,7 @@ const {
     createComment
 } = require('../controllers/blogController');
 
-blogRouter.get('/blog', getAllBlogPost);
+blogRouter.get('/', getAllBlogPost);
 blogRouter.get('/blog/:id', findOneBlogPostById);
 blogRouter.post('/blog/add', addBlogPost);
 blogRouter.post('/blog-update/:id', updateBlogPost);
