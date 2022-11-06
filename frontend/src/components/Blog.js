@@ -41,7 +41,8 @@ export default function Blog() {
     // This method will fetch the blog post from the database.
     useEffect(() => {
         async function getBlogPost() {
-            const response = await fetch(`http://localhost:4000/blog`);
+            // const response = await fetch(`http://localhost:4000/blog`);
+            const response = await fetch("https://kyle-holmstrom.github.io/blog");
 
             if (!response.ok) {
                 const message = `An error occurred: ${response.statusText}`;
