@@ -84,8 +84,8 @@
     width: 65%;
     text-align: center;
 	color: #f2f3f4;
-	font-family: 'Dancing Script', cursive;
-	font-size: 48px;
+	font-family: 'Poppins';
+	font-size: 28px;
 	cursor: default;
 }
 
@@ -97,7 +97,32 @@
 
 .shop-greeting > h4 {
 	font-family: 'Poppins';
-	font-size: 18px;
+	font-size: 20px;
 	text-decoration: underline #fcc200;
 	color: #f2f3f4;
+}
+
+@media only screen and (max-width:  999px) {
+	.shop-container {
+		width: 100vw;
+	}
+	.shop-greeting {
+		width: auto;
+		font-size: 18px;
+		padding: 0px 50px;
+	}
+	.shop-container-card {
+		width: auto;
+		text-align: left;
+		padding: 0px;
+	}
+	.shop-container-card > article {
+		width: auto;
+		padding: 5px 50px;
+	}
+	article, footer {
+		padding: auto;
+		display: flex;
+		justify-content: center;
+	}
 }
