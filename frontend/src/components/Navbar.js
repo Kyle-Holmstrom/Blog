@@ -37,17 +37,17 @@ const Navbar = () => {
                 <HomeIcon sx={{ mr: 0.5}} fontSize="inherit" />
                 Home
             </NavLink>
-            <NavLink to="shop" className="nav-link">
+            <NavLink to="blog/shop" className="nav-link">
                 <StoreIcon sx={{ mr: 0.5}} fontSize="inherit" />
                 Shop
             </NavLink>
-            <NavLink to="users" className="nav-link">
+            <NavLink to="blog/users" className="nav-link">
                 <Badge badgeContent={count} sx={{ mr: 0.8}} >
                     <PeopleAltIcon fontSize="inherit" />
                     </Badge>
                 View Registered Users
             </NavLink>
-            <NavLink to="login" className="nav-link">
+            <NavLink to="blog/login" className="nav-link">
                 <LoginIcon sx={{ mr: 0.5}} fontSize="inherit" />
                 Login
             </NavLink>
