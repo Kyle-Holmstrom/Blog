@@ -78,7 +78,7 @@ export default function Shop() {
         <div>
 			<div className="shop-greeting">
 			<h1 id='shop-header'>Merchandise Shop of the century</h1>
-            <h4>Make a purchase to support your favorite author!</h4>	
+            <h3>Make a purchase to support your favorite author!</h3>	
 			</div>
 			{shopList()}
 		</div>

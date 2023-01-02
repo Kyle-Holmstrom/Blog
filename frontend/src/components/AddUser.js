@@ -66,7 +66,9 @@ export default function Create() {
  return (
    <div style={{
     display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column',
-    color: 'white' }}>
+    color: '#0f0f0f', width: '50%', margin: '100px auto', paddingBottom: '20px', 
+    background: 'linear-gradient(to bottom, transparent, white, white, transparent)'
+    }}>
 
      <h3>Create New User</h3>
      <form onSubmit={onSubmit}>
@@ -93,7 +95,7 @@ export default function Create() {
          />
        </div>
        <div className="form-group">
-         <label htmlFor="email">E-Mail</label>
+         <label htmlFor="email" style={{paddingRight: '30px'}}>E-Mail</label>
          &nbsp;
          <input
            type="email"
@@ -104,7 +106,7 @@ export default function Create() {
          />
        </div>
        <div className="form-group">
-         <label htmlFor="userName">User Name</label>
+         <label htmlFor="userName">Username</label>
          &nbsp;
          <input
            type="text"
@@ -115,7 +117,7 @@ export default function Create() {
          />
        </div>
        <div className="form-group">
-         <label htmlFor="password">Password</label>
+         <label htmlFor="password" style={{paddingRight: '10px'}}>Password</label>
          &nbsp;
          <input
            type="password"
