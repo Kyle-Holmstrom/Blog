@@ -20,7 +20,7 @@ th {
 }
 
 td {
-    border: 1px solid white;
+    border: 2px groove #50c878;
     text-align: center;
     padding: 5px;
 }

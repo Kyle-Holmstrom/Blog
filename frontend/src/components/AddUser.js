@@ -19,6 +19,18 @@ export default function Create() {
      return { ...prev, ...value };
    });
  }
+
+ // Reset the forum fields for the user.
+ function resetFields() {
+  setForm({
+    firstName: "",
+    lastName: "",
+    email: "",
+    userName: "",
+    password: "",
+    isAdmin: "",
+  })
+ }
  
  // This function will handle the submission.
  async function onSubmit(e) {
@@ -52,7 +64,10 @@ export default function Create() {
  
  // This following section will display the form that takes the input from the user.
  return (
-   <div style={{display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column' }}>
+   <div style={{
+    display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column',
+    color: 'white' }}>
+
      <h3>Create New User</h3>
      <form onSubmit={onSubmit}>
        <div className="form-group">
@@ -112,8 +127,12 @@ export default function Create() {
        </div>
        <div className="form-group">
          <Button variant="contained" onClick={onSubmit}>
-                Submit
-            </Button>
+            Submit
+          </Button>
+          &nbsp; &nbsp;
+          <Button variant="contained" onClick={resetFields}>
+            Reset Fields
+          </Button>
        </div>
      </form>
    </div>

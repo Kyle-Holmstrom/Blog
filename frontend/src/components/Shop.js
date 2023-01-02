@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react';
+
 import Badge from '@mui/material/Badge';
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 import Card from '@mui/material/Card';
+
 import './Shop.css';
 
 const ShopItem = (props) => {
@@ -27,7 +29,7 @@ const ShopItem = (props) => {
 					</ul> 
 				</footer>
 				<aside>
-					<Badge badgeContent={count} >
+					<Badge badgeContent={count} className="heart-badge" >
 						<AddShoppingCartIcon color="primary" className="FavoriteIcon" onClick={addToCart} />
 					</Badge>
 				</aside>

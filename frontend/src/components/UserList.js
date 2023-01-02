@@ -13,7 +13,7 @@ const User = (props) => (
         <td>{props.user.isAdmin}</td>
         <td>
             <Button variant="contained" >
-                <Link to={`/edit/${props.user._id}`}
+                <Link to={`/blog/edit/${props.user._id}`}
                     style={{color: 'white', textDecoration: 'none'}}
                     >Edit</Link>
                 </Button> 
@@ -93,8 +93,9 @@ export default function RecordList() {
                     {userList()}
                 </tbody>
             </table>
+            <br />
             <Button variant="contained" className="add-user-btn">
-                <Link to="/add-user" className="add-user-link">Create User</Link>
+                <Link to="/blog/add-user" className="add-user-link">Create User</Link>
             </Button>
         </div>
     );

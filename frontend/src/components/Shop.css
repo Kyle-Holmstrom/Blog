@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
 
+.heart-badge {
+	color: #ff1493;
+}
+
 .FavoriteIcon {
     padding: 6px;
 }
