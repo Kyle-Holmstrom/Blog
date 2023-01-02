@@ -66,7 +66,7 @@ export default function Edit() {
      },
    });
  
-   navigate("/show-users");
+   navigate("/blog/users");
  }
  
  // This following section will display the form that takes input from the user to update the data.
