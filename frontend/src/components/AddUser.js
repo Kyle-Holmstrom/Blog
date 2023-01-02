@@ -59,7 +59,7 @@ export default function Create() {
     password: "",
     isAdmin: "",
    });
-   navigate("/");
+   navigate("/blog/users");
  }
  
  // This following section will display the form that takes the input from the user.
