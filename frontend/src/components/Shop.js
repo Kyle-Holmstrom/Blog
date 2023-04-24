@@ -15,9 +15,9 @@ const ShopItem = (props) => {
     
     return(
         <div className="shop-container">
-			<Card variant="outlined" className="shop-container-card" >
+			<Card variant="outlined" className="shop-container-card">
 				<div className='shop-hero'>
-					<h1>{props.shop.productName}</h1>
+                    <img src={props.shop.img} alt={props.shop.productName} />
 				</div>
 				<article>{props.shop.description}</article>
 				<footer>
