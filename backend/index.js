@@ -6,7 +6,7 @@ const bcrypt = require('bcrypt');
 const User = require('./models/User');
 require('dotenv').config({ path: './config.env' });
 
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 10000;
 
 app.use(cors());
 app.use(express.json());
