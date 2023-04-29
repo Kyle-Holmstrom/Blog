@@ -26,5 +26,5 @@
   "engines": {
     "node": "16.13.2"
   },
-  "proxy": "https://blog-udip.onrender.com/"
+  "proxy": "http://localhost:4000"
 }
